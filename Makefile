@@ -6,11 +6,11 @@ init:
 	@./bin/init-project.sh
 	@make setup
 
-# TypeScript実行用のターゲット（Docker経由）
+# src実行用のターゲット（Docker経由）
 %:
 	@if [ -f "src/$*.ts" ]; then \
 		echo "Running src/$*.ts in Docker container..."; \
-		docker compose exec typescript ts-node $*.ts; \
+		docker compose exec src ts-node $*.ts; \
 	else \
 		echo "File src/$*.ts not found"; \
 		exit 1; \
@@ -33,23 +33,23 @@ restart:
 
 # Docker環境のログ表示
 logs:
-	@docker compose logs -f typescript
+	@docker compose logs -f src
 
 # Docker環境の状態確認
 status:
 	@docker compose ps
 
-# TypeScriptファイルのビルド（Docker経由）
+# srcファイルのビルド（Docker経由）
 build-ts:
-	@docker compose exec typescript npm run build
+	@docker compose exec src npm run build
 
 # 依存関係のインストール（Docker経由）
 install:
-	@docker compose exec typescript npm install
+	@docker compose exec src npm install
 
 # コンテナ内でシェルを開く
 shell:
-	@docker compose exec typescript sh
+	@docker compose exec src sh
 
 # クリーンアップ
 clean:
