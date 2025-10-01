@@ -1,9 +1,7 @@
 services:
   src:
     image: study.yu.web-app-test
-    build:
-      context: ./src
-      dockerfile: Dockerfile
+    build: ./src
     volumes:
       - ./src:/app
       - /app/node_modules
