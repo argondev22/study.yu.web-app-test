@@ -12,17 +12,18 @@ setup:
 	@echo "Docker environment is ready!"
 
 run:
-	@if [ -z "$(FILE)" ]; then \
-		echo "Usage: make run FILE=path/to/file.ts"; \
-		echo "Example: make run FILE=hello.ts"; \
-		echo "Example: make run FILE=section2/example.ts"; \
+	@if [ -z "$(F)" ]; then \
+		echo "Usage: make run F=./src/path/to/F.ts"; \
+		echo "Example: make run F=./src/hello.ts"; \
+		echo "Example: make run F=./src/section2/example.ts"; \
 		exit 1; \
 	fi
-	@if [ -f "src/$(FILE)" ]; then \
-		echo "Running src/$(FILE) in Docker container..."; \
-		docker compose exec src ts-node $(FILE); \
+	@if [ -f "$(F)" ]; then \
+		echo "Running $(F) in Docker container..."; \
+		F_PATH=$$(echo $(F) | sed 's|^./src/||'); \
+		docker compose exec src ts-node $$F_PATH; \
 	else \
-		echo "File src/$(FILE) not found"; \
+		echo "F $(F) not found"; \
 		exit 1; \
 	fi
 
