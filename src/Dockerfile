@@ -1,7 +1,7 @@
 FROM node:18-alpine
 
 # 作業ディレクトリを設定
-WORKDIR /app
+WORKDIR /src
 
 # package.jsonとpackage-lock.jsonをコピー
 COPY package*.json ./
