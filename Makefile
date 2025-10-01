@@ -36,9 +36,31 @@ clean:
 	@docker volume prune -f
 
 test:
-	@echo "Running Jest tests..."
-	@docker compose exec src npm test
+	@if [ -z "$(F)" ]; then \
+		echo "Running all Jest tests..."; \
+		docker compose exec src npm test; \
+	else \
+		if [ -f "$(F)" ]; then \
+			echo "Running Jest test for $(F)..."; \
+			F_PATH=$$(echo $(F) | sed 's|^\./src/||'); \
+			docker compose exec src npm test $$F_PATH; \
+		else \
+			echo "F $(F) not found"; \
+			exit 1; \
+		fi; \
+	fi
 
 test-watch:
-	@echo "Running Jest tests in watch mode..."
-	@docker compose exec src npm test -- --watch
+	@if [ -z "$(F)" ]; then \
+		echo "Running Jest tests in watch mode..."; \
+		docker compose exec src npm test -- --watch; \
+	else \
+		if [ -f "$(F)" ]; then \
+			echo "Running Jest test in watch mode for $(F)..."; \
+			F_PATH=$$(echo $(F) | sed 's|^\./src/||'); \
+			docker compose exec src npm test -- --watch $$F_PATH; \
+		else \
+			echo "F $(F) not found"; \
+			exit 1; \
+		fi; \
+	fi
