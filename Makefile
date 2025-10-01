@@ -20,7 +20,7 @@ run:
 	fi
 	@if [ -f "$(F)" ]; then \
 		echo "Running $(F) in Docker container..."; \
-		F_PATH=$$(echo $(F) | sed 's|^./src/||'); \
+		F_PATH=$$(echo $(F) | sed 's|^\./src/||'); \
 		docker compose exec src ts-node $$F_PATH; \
 	else \
 		echo "F $(F) not found"; \
