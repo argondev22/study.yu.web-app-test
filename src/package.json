@@ -1,0 +1,12 @@
+{
+  "name": "study.yu.web-app-test",
+  "version": "1.0.0",
+  "author": "argondev22",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  },
+  "dependencies": {}
+}

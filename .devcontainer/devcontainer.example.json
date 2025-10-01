@@ -15,9 +15,7 @@
       "extensions": [
         "editorconfig.editorconfig",
         "bierner.markdown-mermaid",
-        "cweijan.vscode-database-client2",
-        "cweijan.dbclient-jdbc",
-        "ms-python.python"
+        "cweijan.vscode-database-client2"
       ]
     }
   },

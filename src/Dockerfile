@@ -1,6 +1,7 @@
 FROM node:18-alpine
 
-WORKDIR /app
+# 作業ディレクトリを設定
+WORKDIR /src
 
 # package.jsonとpackage-lock.jsonをコピー
 COPY package*.json ./
@@ -11,8 +12,6 @@ RUN npm install
 # ソースコードをコピー
 COPY . .
 
-# ポート3000を公開
-EXPOSE 3000
+# TypeScriptをグローバルにインストール
+RUN npm install -g typescript ts-node
 
-# 開発サーバーを起動
-CMD ["npm", "start"]

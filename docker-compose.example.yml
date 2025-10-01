@@ -1,0 +1,11 @@
+services:
+  src:
+    image: study.yu.web-app-test
+    build: ./src
+    volumes:
+      - ./src:/src
+      - /src/node_modules
+    working_dir: /src
+    command: tail -f /dev/null
+    environment:
+      - NODE_ENV=development
