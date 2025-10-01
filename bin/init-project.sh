@@ -3,7 +3,7 @@
 echo "Starting project initialization..."
 
 cp ./.devcontainer/devcontainer.example.json ./.devcontainer/devcontainer.json
-cp ./app/docker-compose.example.yml ./app/docker-compose.yml
+cp ./docker-compose.example.yml ./docker-compose.yml
 
 echo "Project initialization complete."
 
