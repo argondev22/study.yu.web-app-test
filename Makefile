@@ -1,4 +1,4 @@
-.PHONY: init setup run down clean
+.PHONY: init setup run down clean test test-watch
 
 init:
 	@chmod +x ./bin/init-project.sh
@@ -34,3 +34,11 @@ clean:
 	@docker compose down
 	@docker system prune -f
 	@docker volume prune -f
+
+test:
+	@echo "Running Jest tests..."
+	@docker compose exec src npm test
+
+test-watch:
+	@echo "Running Jest tests in watch mode..."
+	@docker compose exec src npm test -- --watch

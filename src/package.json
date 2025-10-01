@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "author": "argondev22",
   "license": "ISC",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
