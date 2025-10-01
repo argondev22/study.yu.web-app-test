@@ -1,0 +1,13 @@
+services:
+  src:
+    image: study.yu.web-app-test
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app
+      - /app/node_modules
+    working_dir: /app
+    command: tail -f /dev/null
+    environment:
+      - NODE_ENV=development
