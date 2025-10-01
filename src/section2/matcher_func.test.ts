@@ -23,3 +23,8 @@ it("オブジェクトのテスト", () => {
   const obj2 = { a: 1, b: 2 };
   expect(obj1).toEqual(obj2);
 });
+
+// not
+it("2+2は5ではない", () => {
+  expect(2 + 2).not.toBe(4);
+});
