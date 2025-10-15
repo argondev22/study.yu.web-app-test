@@ -11,5 +11,3 @@ it("mockImplementation", () => {
   mockFn.mockImplementation(() => "Hello, World!");
   expect(mockFn()).toBe("Hello, World!");
 });
-
-
