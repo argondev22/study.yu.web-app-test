@@ -68,7 +68,7 @@ This is a hands-on learning repository for mastering TypeScript testing with Jes
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/argondev22/study.yu.web-app-test.git
+   git clone <repository-url>
    cd study.yu.web-app-test
    ```
 
@@ -136,17 +136,19 @@ make clean
 ### Section 2: Basic Testing
 Start with basic testing concepts in `src/section2/`:
 - `sum.test.ts` - Basic matchers and assertions
-- `async_func.test.ts` - Testing asynchronous code
+- `divide.test.ts` - More examples with matchers
+- `matcher_func.test.ts` - Various Jest matchers (toBe, toEqual, etc.)
+- `async_func.test.ts` - Testing asynchronous code (Promises)
 - `group.test.ts` - Organizing tests with describe blocks
-- `setup_teardown.test.ts` - beforeEach, afterEach, beforeAll, afterAll
+- `setup_teardown.test.ts` - beforeEach, afterEach, beforeAll, afterAll hooks
 - `practice.test.ts` - Practice exercises
 
 ### Section 3: Advanced Testing
 Progress to advanced techniques in `src/section3/`:
-- `mock_func.test.ts` - Creating and using mock functions
+- `mock_func.test.ts` - Creating and using mock functions with jest.fn()
 - `mock_return.test.ts` - Controlling mock return values
-- `mock_called.test.ts` - Verifying function calls
-- `mock_module.test.ts` - Mocking entire modules
+- `mock_called.test.ts` - Verifying function calls and arguments
+- `mock_module.test.ts` - Mocking entire modules with jest.mock()
 - `mock_spy.test.ts` - Using spies to track function calls
 - `practice.test.ts` - Advanced practice exercises
 
