@@ -1,9 +1,9 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} **/
 export default {
   testEnvironment: 'jest-environment-jsdom',
-  // 以下にtsconfig.app.jsonの設定を追加する
+  // Jest用のTypeScript設定を使用
   transform: {
-    '^.+.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.app.json' }],
+    '^.+.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.jest.json' }],
   },
   setupFilesAfterEnv: ['./jest.setup.ts'],
 };
