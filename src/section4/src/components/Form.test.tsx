@@ -16,6 +16,7 @@ describe("Form", () => {
     const alertSpy = jest.spyOn(window, "alert").mockReturnValue();
     
     render(<Form />);
+    
     const input = screen.getByPlaceholderText("Enter text");
     await user.type(input, "Test Text");
     expect(screen.getByDisplayValue("Test Text")).toBeInTheDocument();
