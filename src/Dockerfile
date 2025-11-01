@@ -14,4 +14,3 @@ COPY . .
 
 # TypeScriptをグローバルにインストール
 RUN npm install -g typescript ts-node
-
