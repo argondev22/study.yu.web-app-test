@@ -1,0 +1,19 @@
+# Git LFS でバイナリ画像ファイルを管理
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
+*.gif filter=lfs diff=lfs merge=lfs -text
+*.webp filter=lfs diff=lfs merge=lfs -text
+*.avif filter=lfs diff=lfs merge=lfs -text
+
+# SVG はテキストファイルなので通常の Git で管理
+*.svg text eol=lf
+
+# Storybook のアセットディレクトリ内の画像も確実に LFS で管理
+src/stories/assets/*.png filter=lfs diff=lfs merge=lfs -text
+src/stories/assets/*.jpg filter=lfs diff=lfs merge=lfs -text
+src/stories/assets/*.jpeg filter=lfs diff=lfs merge=lfs -text
+src/stories/assets/*.gif filter=lfs diff=lfs merge=lfs -text
+src/stories/assets/*.webp filter=lfs diff=lfs merge=lfs -text
+src/stories/assets/*.avif filter=lfs diff=lfs merge=lfs -text
+
